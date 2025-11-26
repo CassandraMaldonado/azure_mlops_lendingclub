@@ -2,8 +2,6 @@
 
 This repo contains an end-to-end MLOps workflow on Azure Machine Learning using the public **Lending Club** dataset to predict loan default.
 
-It was built as part of a graduate **MLOps course project** and is structured to double as a **professional portfolio project**.
-
 ---
 
 ## 1. Project Overview
