@@ -12,7 +12,7 @@ This repo contains an end-to-end MLOps workflow on Azure Machine Learning using 
 - Registered the best MLflow model in the Azure ML model registry.
 - Ran a test model job to evaluate the model on a held-out test set.
 - Used a Python testing script to:
-  - Load the registered MLflow model locally.
+  - Loaded the registered MLflow model locally.
   - Score a test set from 2015.
   - Compute metrics (AUC, accuracy, F1, confusion matrix).
   - Simulate **data drift** (e.g., by shifting feature distributions) and compare.
