@@ -4,10 +4,9 @@ This repo contains an end-to-end MLOps workflow on Azure Machine Learning using 
 
 ---
 
-## 1. Project Overview
+## 1. Overview
 
-**Goal:**  
-Predict whether a loan will default, and operationalize the model using Azure Machine Learning:
+**Goal:**  To predict whether a loan will default, and operationalize the model using Azure Machine Learning:
 
 - Use **Azure AutoML** (classification) to train many models.
 - Register the **best MLflow model** in the Azure ML model registry.
