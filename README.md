@@ -37,7 +37,7 @@ High-level components:
 
 4. **Model Testing**
    - **UI Test model job**: evaluates the registered model on `lending_club_test:`.
-   - **Scripted test (`src/model_test.py`)**: downloads the MLflow model and runs:
+   - **Scripted test**: downloads the MLflow model and runs:
      - Metrics on the test set.
      - A simple **data drift check** vs training data.
 
