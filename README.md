@@ -46,6 +46,70 @@ High-level components:
 
 > **Note:** Real-time deployment to an online endpoint was attempted, but blocked by quota limits in the student subscription. The repo therefore focuses on **training, registration, testing, and drift**, which already covers the core MLOps lifecycle.
 
----
+## 3. Model evaluation summary
 
-## 3. Repository Structure
+After registering the best AutoML model, we evaluated it using Azure ML’s Test Model (Preview) tool. This allowed us to validate the model on a fully held-out dataset using standardized metrics and diagnostic plots.
+
+1. Overall Performance
+
+Metrics:
+
+Accuracy: 0.912
+
+AUC: 0.957–0.975
+
+F1 (Binary): 0.944
+
+Log Loss: 0.204
+
+Interpretation:
+The model achieves excellent separation between Charged Off vs. Fully Paid loans and produces reliable probability estimates—both essential in credit-risk modeling.
+
+2. ROC Curve
+
+The ROC curves rise sharply toward the top-left corner, with AUC consistently above 0.95.
+
+Meaning:
+The model maintains strong sensitivity and specificity across various thresholds, and rarely confuses risky borrowers with low-risk ones.
+
+3. Precision–Recall Curve
+
+Precision remains above ~0.85 across most recall levels.
+
+Meaning:
+When the model identifies someone as high-risk, it is usually correct. This is especially important in imbalanced datasets, where defaults are rare.
+
+4. Calibration Curve
+
+Predicted probabilities align closely with actual default frequencies.
+
+Meaning:
+The model is not only accurate but also well-calibrated, which is crucial for decisions involving pricing, expected losses, or credit limits.
+
+5. Lift Chart
+
+The top 10% highest-risk borrowers show 2×–3× lift over random selection.
+
+Meaning:
+Focusing on this top segment dramatically increases the number of true defaults captured, enabling more efficient manual reviews and proactive interventions.
+
+6. Cumulative Gains Curve
+
+Nearly all default cases are captured within the top 40% of borrowers ranked by risk.
+
+Meaning:
+Operational teams can concentrate effort on a smaller portion of the portfolio while still identifying most high-risk customers—significantly reducing operational cost.
+
+✔ Overall Conclusion
+
+Across all evaluation tools, the model performs consistently well. It:
+
+Distinguishes high-risk from low-risk borrowers effectively
+
+Produces trustworthy probability estimates
+
+Delivers meaningful lift and actionable ranking
+
+Supports real-world credit-risk decisions
+
+These characteristics make the model suitable for deployment in lending workflows and further integration within an MLOps pipeline.
