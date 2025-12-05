@@ -28,9 +28,9 @@ High-level components:
    - `lending_club_test:`: test data asset.
 
 2. **Training / AutoML**
-   - Experiment: `loan_default_experiment`
-   - AutoML job: `loan_default_automl_run_1`
-   - Compute: **Serverless** CPU (configured in the UI).
+   - Experiment: `loan_default_experiment`.
+   - AutoML job: `loan_default_automl_run_1`.
+   - Compute: **Serverless** CPU.
 
 3. **Model Registry**
    - Best model registered as  
