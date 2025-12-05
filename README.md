@@ -33,8 +33,7 @@ High-level components:
    - Compute: **Serverless** CPU.
 
 3. **Model Registry**
-   - Best model registered as  
-     **`loan_default_best_model:1`** (type: MLflow).
+   - Best model registered as **`loan_default_best_model:1`**.
 
 4. **Model Testing**
    - **UI Test model job**: evaluates the registered model on `lending_club_test:1`.
