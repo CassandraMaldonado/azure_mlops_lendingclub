@@ -50,11 +50,10 @@ High-level components:
 
 After registering the best AutoML model, I evaluated it using Azure ML’s Test Model (Preview) tool. This allowed me to validate the model on a fully held-out dataset using standardized metrics and diagnostic plots.
 
-1. Overall Performance
+1. **Overall Performance**
 
 Metrics:
-
-Accuracy: 0.912
+- Accuracy: 0.912
 
 AUC: 0.957–0.975
 
