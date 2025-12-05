@@ -50,11 +50,3 @@ High-level components:
 ---
 
 ## 3. Repository Structure
-
-```text
-azure-mlops-lendingclub/
-├── data/               # (paths only, data not committed)
-├── notebooks/          # EDA, AutoML setup, drift simulation
-├── src/                # scripts for Azure ML + testing
-├── model/              # downloaded MLflow model (ignored in git)
-└── docs/               # diagrams / screenshots (optional)
