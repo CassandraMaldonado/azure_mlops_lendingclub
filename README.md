@@ -48,7 +48,7 @@ High-level components:
 
 ## 3. Model evaluation summary
 
-After registering the best AutoML model, we evaluated it using Azure ML’s Test Model (Preview) tool. This allowed us to validate the model on a fully held-out dataset using standardized metrics and diagnostic plots.
+After registering the best AutoML model, I evaluated it using Azure ML’s Test Model (Preview) tool. This allowed me to validate the model on a fully held-out dataset using standardized metrics and diagnostic plots.
 
 1. Overall Performance
 
