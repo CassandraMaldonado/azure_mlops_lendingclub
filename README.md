@@ -15,7 +15,7 @@ This repo contains an end-to-end MLOps workflow on Azure Machine Learning using 
     - Loaded the registered MLflow model locally.
     - Score a test set from 2015.
     - Compute metrics (AUC, accuracy, F1, confusion matrix).
-    - Simulated **data drift** and compare.
+    - Simulated **data drift** and checked if the model coul detect it.
 
 ---
 
