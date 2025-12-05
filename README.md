@@ -24,8 +24,8 @@ This repo contains an end-to-end MLOps workflow on Azure Machine Learning using 
 High-level components:
 
 1. **Data**  
-   - `lending_club_final:1` – training/validation data asset.  
-   - `lending_club_test:1` – 2015-10 test data asset.
+   - `lending_club_final:`: training/validation data asset.  
+   - `lending_club_test:`: test data asset.
 
 2. **Training / AutoML**
    - Experiment: `loan_default_experiment`
