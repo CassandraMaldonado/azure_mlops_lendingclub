@@ -59,10 +59,9 @@ Metrics:
 
 - **F1 (Binary)**: 0.944
 
-- Log Loss: 0.204
+- **Log Loss:** 0.204
 
-Interpretation:
-The model achieves excellent separation between Charged Off vs. Fully Paid loans and produces reliable probability estimates—both essential in credit-risk modeling.
+The model achieves excellent separation between Charged Off vs. Fully Paid loans and produces reliable probability estimates, both essential in credit-risk modeling.
 
 2. ROC Curve
 
