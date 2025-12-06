@@ -53,7 +53,7 @@ After registering the best AutoML model, I evaluated it using Azure ML’s Test 
 1. **Overall Performance**
 
 Metrics:
-- Accuracy: 0.912
+- **Accuracy:** 0.912
 
 - AUC: 0.957–0.975
 
