@@ -55,11 +55,11 @@ After registering the best AutoML model, I evaluated it using Azure ML’s Test 
 Metrics:
 - Accuracy: 0.912
 
-AUC: 0.957–0.975
+- AUC: 0.957–0.975
 
-F1 (Binary): 0.944
+- F1 (Binary): 0.944
 
-Log Loss: 0.204
+- Log Loss: 0.204
 
 Interpretation:
 The model achieves excellent separation between Charged Off vs. Fully Paid loans and produces reliable probability estimates—both essential in credit-risk modeling.
