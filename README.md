@@ -57,7 +57,7 @@ Metrics:
 
 - **AUC:** 0.957–0.975
 
-- F1 (Binary): 0.944
+- **F1 (Binary)**: 0.944
 
 - Log Loss: 0.204
 
