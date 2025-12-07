@@ -65,7 +65,7 @@ The model achieves excellent separation between Charged Off vs. Fully Paid loans
 
 2. **ROC curve**
 
-The ROC curves rise sharply toward the top-left corner with AUC consistently above 0.95. This meand the model maintains strong sensitivity and specificity across various thresholds, and rarely confuses risky borrowers with low-risk ones.
+The ROC curves rise sharply toward the top-left corner with AUC consistently above 0.95. This meand the model maintains strong sensitivity and specificity across various thresholds and rarely confuses risky borrowers with low-risk ones.
 
 3. Precision–Recall Curve
 
