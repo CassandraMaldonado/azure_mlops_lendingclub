@@ -50,7 +50,7 @@ High-level components:
 
 After registering the best AutoML model, I evaluated it using Azure ML’s Test Model (Preview) tool. This allowed me to validate the model on a fully held-out dataset using standardized metrics and diagnostic plots.
 
-1. **Overall Performance**
+1. **Overall performance**
 
 Metrics:
 - **Accuracy:** 0.912
@@ -63,7 +63,7 @@ Metrics:
 
 The model achieves excellent separation between Charged Off vs. Fully Paid loans and produces reliable probability estimates, both essential in credit-risk modeling.
 
-2. ROC Curve
+2. **ROC curve**
 
 The ROC curves rise sharply toward the top-left corner, with AUC consistently above 0.95.
 
