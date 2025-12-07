@@ -67,9 +67,9 @@ The model achieves excellent separation between Charged Off vs. Fully Paid loans
 
 The ROC curves rise sharply toward the top-left corner with AUC consistently above 0.95. This meand the model maintains strong sensitivity and specificity across various thresholds and rarely confuses risky borrowers with low-risk ones.
 
-3. **Precision–Recall Curve**
+3. **Precision–Recall curve**
 
-Precision remains above ~0.85 across most recall levels.
+Precision remains above 0.85 across most recall levels.
 
 Meaning:
 When the model identifies someone as high-risk, it is usually correct. This is especially important in imbalanced datasets, where defaults are rare.
