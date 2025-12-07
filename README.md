@@ -69,10 +69,7 @@ The ROC curves rise sharply toward the top-left corner with AUC consistently abo
 
 3. **Precision–Recall curve**
 
-Precision remains above 0.85 across most recall levels.
-
-Meaning:
-When the model identifies someone as high-risk, it is usually correct. This is especially important in imbalanced datasets, where defaults are rare.
+Precision remains above 0.85 across most recall levels, so when the model identifies someone as high-risk, it is usually correct. This is especially important in imbalanced datasets, where defaults are rare.
 
 4. Calibration Curve
 
