@@ -71,7 +71,7 @@ The ROC curves rise sharply toward the top-left corner with AUC consistently abo
 
 Precision remains above 0.85 across most recall levels, so when the model identifies someone as high-risk, it is usually correct. This is especially important in imbalanced datasets, where defaults are rare.
 
-4. Calibration Curve
+4. **Calibration curve**
 
 Predicted probabilities align closely with actual default frequencies.
 
