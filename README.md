@@ -4,6 +4,10 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 ---
 
+## 1. Overview
+
+**Goal:** Predict whether a loan will default and operationalize the model using Azure Machine Learning with production-grade monitoring.
+
 ### What I built
 
 | Component | Description |
