@@ -78,7 +78,7 @@ Predicted probabilities align closely with actual default frequencies.
 Meaning:
 The model is not only accurate but also well-calibrated, which is crucial for decisions involving pricing, expected losses, or credit limits.
 
-5. Lift Chart
+5. **Lift chart**
 
 The top 10% highest-risk borrowers show 2×–3× lift over random selection.
 
