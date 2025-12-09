@@ -73,7 +73,7 @@ Precision remains above 0.85 across most recall levels, so when the model identi
 
 4. **Calibration curve**
 
-Predicted probabilities align closely with actual default frequencies. The model is not only accurate but also well-calibrated, which is crucial for decisions involving pricing, expected losses, or credit limits.
+Predicted probabilities align closely with actual default frequencies. The model is not only accurate but also well-calibrated, which is crucial for decisions involving pricing, expected losses or credit limits.
 
 5. **Lift chart**
 
