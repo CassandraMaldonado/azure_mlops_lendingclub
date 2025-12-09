@@ -4,18 +4,15 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 ---
 
-## 1. Overview
+### What We Built
 
-**Goal:**  To predict whether a loan will default and operationalize the model using Azure Machine Learning:
-
-- Used **Azure AutoML** to train many models.
-- Registered the best MLflow model in the Azure ML model registry.
-- Ran a test model job to evaluate the model on a held-out test set.
-- Used a Python testing script to:
-    - Loaded the registered MLflow model locally.
-    - Score a test set from 2015.
-    - Compute metrics (AUC, accuracy, F1, confusion matrix).
-    - Simulated **data drift** and checked if the model coul detect it.
+| Component | Description |
+|-----------|-------------|
+| **Model Training** | Azure AutoML to train and select the best model |
+| **Model Registry** | MLflow model registered in Azure ML |
+| **Model Evaluation** | Test job on held-out data with comprehensive metrics |
+| **Drift Detection** | Evidently AI monitoring for feature, target, and performance drift |
+| **Local Inference** | Python script for batch scoring and drift simulation |
 
 ---
 
