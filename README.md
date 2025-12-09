@@ -81,10 +81,7 @@ The top 10% highest-risk borrowers show 2×–3× lift over random selection. Fo
 
 6. **Cumulative gains curve**
 
-Nearly all default cases are captured within the top 40% of borrowers ranked by risk.
-
-Meaning:
-Operational teams can concentrate effort on a smaller portion of the portfolio while still identifying most high-risk customers—significantly reducing operational cost.
+Nearly all default cases are captured within the top 40% of borrowers ranked by risk. Operational teams can concentrate effort on a smaller portion of the portfolio while still identifying most high-risk customers—significantly reducing operational cost.
 
 ✔ Overall Conclusion
 
