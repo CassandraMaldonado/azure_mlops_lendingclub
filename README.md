@@ -77,10 +77,7 @@ Predicted probabilities align closely with actual default frequencies. The model
 
 5. **Lift chart**
 
-The top 10% highest-risk borrowers show 2×–3× lift over random selection.
-
-Meaning:
-Focusing on this top segment dramatically increases the number of true defaults captured, enabling more efficient manual reviews and proactive interventions.
+The top 10% highest-risk borrowers show 2×–3× lift over random selection. Focusing on this top segment dramatically increases the number of true defaults captured, enabling more efficient manual reviews and proactive interventions.
 
 6. **Cumulative gains curve**
 
