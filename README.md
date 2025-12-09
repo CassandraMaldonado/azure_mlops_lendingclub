@@ -4,7 +4,7 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 ---
 
-### What We Built
+### What I built
 
 | Component | Description |
 |-----------|-------------|
