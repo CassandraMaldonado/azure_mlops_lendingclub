@@ -1,6 +1,6 @@
-# Azure Lending Club Loan Default (AutoML + Drift)
+# Azure Lending Club Loan Default Prediction
 
-This repo contains an end-to-end MLOps workflow on Azure Machine Learning using the public **Lending Club** dataset to predict loan default.
+An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club dataset to predict loan defaults, with comprehensive drift detection and model monitoring.
 
 ---
 
