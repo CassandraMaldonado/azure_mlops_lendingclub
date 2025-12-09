@@ -85,7 +85,7 @@ The top 10% highest-risk borrowers show 2×–3× lift over random selection.
 Meaning:
 Focusing on this top segment dramatically increases the number of true defaults captured, enabling more efficient manual reviews and proactive interventions.
 
-6. **Cumulative Gains Curve**
+6. **Cumulative gains curve**
 
 Nearly all default cases are captured within the top 40% of borrowers ranked by risk.
 
