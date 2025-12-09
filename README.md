@@ -44,7 +44,7 @@ High-level components:
 5. **Local Inference**
    - `src/inference_local.py` loads the MLflow model and scores a few example loans.
 
-> **Note:** Real-time deployment to an online endpoint was attempted, but blocked by quota limits in the student subscription. The repo therefore focuses on **training, registration, testing, and drift**, which already covers the core MLOps lifecycle.
+**Note:** Real-time deployment to an online endpoint was attempted, but blocked by quota limits in the student subscription. The repo therefore focuses on **training, registration, testing, and drift**, which already covers the core MLOps lifecycle.
 
 ## 3. Model evaluation summary
 
