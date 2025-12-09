@@ -8,11 +8,11 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 | Component | Description |
 |-----------|-------------|
-| **Model Training** | Azure AutoML to train and select the best model |
-| **Model Registry** | MLflow model registered in Azure ML |
-| **Model Evaluation** | Test job on held-out data with comprehensive metrics |
-| **Drift Detection** | Evidently AI monitoring for feature, target, and performance drift |
-| **Local Inference** | Python script for batch scoring and drift simulation |
+| **Model Training** | Azure AutoML to train and select the best model. |
+| **Model Registry** | MLflow model registered in Azure ML. |
+| **Model Evaluation** | Test job on held-out data with comprehensive metrics. |
+| **Drift Detection** | Evidently AI monitoring for feature, target and performance drift. |
+| **Local Inference** | Python script for batch scoring and drift simulation. |
 
 ---
 
