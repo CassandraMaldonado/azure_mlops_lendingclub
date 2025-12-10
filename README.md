@@ -21,30 +21,41 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 ## 2. Architecture
 
-High-level components:
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           AZURE MACHINE LEARNING                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐                  │
+│  │   Data       │    │   AutoML     │    │   Model      │                  │
+│  │   Assets     │───▶│   Training   │───▶│   Registry   │                  │
+│  │              │    │              │    │              │                  │
+│  │ • train data │    │ • experiment │    │ • best model │                  │
+│  │ • test data  │    │ • serverless │    │ • MLflow     │                  │
+│  └──────────────┘    └──────────────┘    └──────┬───────┘                  │
+│                                                  │                          │
+└──────────────────────────────────────────────────┼──────────────────────────┘
+                                                   │
+                        ┌──────────────────────────┼──────────────────────────┐
+                        │                          ▼                          │
+                        │  ┌──────────────┐  ┌──────────────┐                 │
+                        │  │  Test Model  │  │   Local      │                 │
+                        │  │  (Azure)     │  │   Inference  │                 │
+                        │  └──────────────┘  └──────┬───────┘                 │
+                        │                           │                         │
+                        │                           ▼                         │
+                        │         ┌─────────────────────────────┐             │
+                        │         │     DRIFT DETECTION         │             │
+                        │         │     (Evidently AI)          │             │
+                        │         │                             │             │
+                        │         │  • Feature Drift            │             │
+                        │         │  • Target Drift             │             │
+                        │         │  • Performance Shift        │             │
+                        │         └─────────────────────────────┘             │
+                        │                    LOCAL ENVIRONMENT                │
+                        └─────────────────────────────────────────────────────┘
+```
 
-1. **Data**  
-   - `lending_club_final:`: training/validation data asset.  
-   - `lending_club_test:`: test data asset.
-
-2. **Training / AutoML**
-   - Experiment: `loan_default_experiment`.
-   - AutoML job: `loan_default_automl_run_1`.
-   - Compute: **Serverless** CPU.
-
-3. **Model Registry**
-   - Best model registered as `loan_default_best_model:`.
-
-4. **Model Testing**
-   - **UI Test model job**: evaluates the registered model on `lending_club_test:`.
-   - **Scripted test**: downloads the MLflow model and runs:
-     - Metrics on the test set.
-     - A simple **data drift check** vs training data.
-
-5. **Local Inference**
-   - `src/inference_local.py` loads the MLflow model and scores a few example loans.
-
-**Note:** Real-time deployment to an online endpoint was attempted, but blocked by quota limits in the student subscription. The repo therefore focuses on **training, registration, testing, and drift**, which already covers the core MLOps lifecycle.
 
 ## 3. Model evaluation summary
 
