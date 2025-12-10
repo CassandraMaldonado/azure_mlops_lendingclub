@@ -55,7 +55,7 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
                         │                    LOCAL ENVIRONMENT                │
                         └─────────────────────────────────────────────────────┘
 ```
-\### Components
+### Components
 
 | Layer | Resource | Purpose |
 |-------|----------|---------|
