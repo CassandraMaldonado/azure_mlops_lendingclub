@@ -62,8 +62,8 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 | **Data** | `lending_club_final` | Training and validation data asset. |
 | | `lending_club_test` | Test data asset. |
 | **Training** | `loan_default_experiment` | AutoML experiment. |
-| | `loan_default_automl_run_1` | AutoML job (Serverless CPU) |
-| **Registry** | `loan_default_best_model` | Best model (MLflow format) |
+| | `loan_default_automl_run_1` | AutoML job. |
+| **Registry** | `loan_default_best_model` | Best model. |
 | **Evaluation** | Test Model (Preview) | Azure ML evaluation on test set |
 | **Monitoring** | Evidently AI | Drift detection and model monitoring |
 
