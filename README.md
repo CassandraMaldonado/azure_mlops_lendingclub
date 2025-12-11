@@ -2,6 +2,8 @@
 
 An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club dataset to predict loan defaults, with comprehensive drift detection and model monitoring.
 
+By: Cassandra Maldonado, Aida Aida Sarinzhipova, Mahima Masetty, Aarav Dewangan
+
 ---
 
 ## 1. Overview
