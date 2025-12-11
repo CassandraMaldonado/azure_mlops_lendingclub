@@ -84,3 +84,14 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 | **AUC-ROC** | 0.957–0.975 | Excellent class separation |
 | **F1 Score** | 0.944 | Strong balance of precision/recall |
 | **Log Loss** | 0.204 | Well-calibrated probabilities |
+
+
+### Evaluation Insights
+
+| Analysis | Finding |
+|----------|---------|
+| **ROC Curve** | AUC > 0.95 consistently; strong sensitivity and specificity across thresholds |
+| **Precision-Recall** | Precision > 0.85 at most recall levels; reliable high-risk identification |
+| **Calibration** | Predicted probabilities align with actual default frequencies |
+| **Lift Chart** | Top 10% highest-risk borrowers show 2×–3× lift over random selection |
+| **Cumulative Gains** | Nearly all defaults captured within top 40% of risk-ranked borrowers |
