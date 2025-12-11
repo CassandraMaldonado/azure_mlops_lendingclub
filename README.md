@@ -220,18 +220,9 @@ The PR curves tell a dramatic story: Reference maintains precision >0.75 up to 8
 
 **Critical Issue:** The model went from catching **126,373 defaults** to only **7,628** — missing 94% of actual defaults on drifted data.
 
-### What the Dashboard Shows
-
-| Panel | Observation |
-|-------|-------------|
-| **ROC Curves** | Blue (reference) hugs top-left corner; Red (production) nearly follows the diagonal random line |
-| **Prediction Distribution** | Both datasets show predictions clustered near 0, but production data has different underlying patterns |
-| **Metrics Comparison** | All blue bars (reference) tower over red bars (production) — dramatic collapse across every metric |
-| **Confusion Matrix Diff** | Massive shifts: -419,618 in True Negatives, -118,745 in True Positives |
-
 ### Key Finding
 
-> ⚠️ **Critical Alert:** The model's AUC dropped from **0.954 to 0.529** — a **44.5% degradation** that renders the model essentially useless on drifted production data. The model now misses **94% of actual loan defaults**. This demonstrates why drift monitoring is essential: without it, we'd be approving high-risk loans thinking they're safe.
+The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that renders the model essentially useless on drifted production data. The model now misses **94% of actual loan defaults**. This demonstrates why drift monitoring is essential: without it, we'd be approving high-risk loans thinking they're safe.
 
 ---
 
@@ -263,49 +254,16 @@ The PR curves tell a dramatic story: Reference maintains precision >0.75 up to 8
 
 ---
 
-## 7. Quick Start
-
-### Prerequisites
-```bash
-pip install evidently pandas scikit-learn xgboost matplotlib seaborn plotly
-```
-
-### Run Drift Detection
-```python
-import pandas as pd
-from evidently.report import Report
-from evidently.metric_preset import DataDriftPreset
-
-# Load data
-reference = pd.read_csv("data/train_data_cleaned.csv")
-production = pd.read_csv("data/test_dataset_drifted_v2.csv")
-
-# Run drift detection
-report = Report(metrics=[DataDriftPreset()])
-report.run(reference_data=reference, current_data=production)
-report.save_html("drift_report.html")
-```
-
----
 
 ## 8. Key Takeaways
 
-1. **Model Performance:** Azure AutoML achieved **0.954 AUC** and **0.840 Average Precision** on training data
+1. **Model Performance:** Azure AutoML achieved **0.954 AUC** and **0.840 Average Precision** on training data.
 
-2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.954 → **0.529**, and the model now misses **94% of loan defaults**
+2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.954 → **0.529**, and the model now misses **94% of loan defaults**.
 
-3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage
+3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage.
 
-4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe — the model catches only 7,628 of 53,376 actual defaults
-
----
-
-## 9. Future Improvements
-
-- [ ] Deploy to Azure ML online endpoint (when quota available)
-- [ ] Add `DataQualityPreset()` for input data validation
-- [ ] Implement automated retraining triggers based on drift alerts
-- [ ] Set up scheduled drift monitoring jobs in Azure ML
+4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe — the model catches only 7,628 of 53,376 actual defaults.
 
 ---
 
@@ -315,6 +273,3 @@ report.save_html("drift_report.html")
 - [Azure ML AutoML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml)
 - [MLflow Model Registry](https://mlflow.org/docs/latest/model-registry.html)
 
----
-
-*MLOps Project - Azure Machine Learning + Evidently AI Drift Detection*
