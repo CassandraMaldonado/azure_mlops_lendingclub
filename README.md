@@ -24,41 +24,9 @@ By: Cassandra Maldonado, Aida Aida Sarinzhipova, Mahima Masetty, Aarav Dewangan
 
 ## 2. Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           AZURE MACHINE LEARNING                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐                   │
-│  │   Data       │    │   AutoML     │    │   Model      │                   │
-│  │   Assets     │───▶│   Training   │───▶│   Registry   │                   │
-│  │              │    │              │    │              │                   │
-│  │ • train data │    │ • experiment │    │ • best model │                   │
-│  │ • test data  │    │ • serverless │    │ • MLflow     │                   │
-│  └──────────────┘    └──────────────┘    └──────┬───────┘                   │
-│                                                 │                           │
-└─────────────────────────────────────────────────┼───────────────────────────┘
-                                                  │
-                        ┌─────────────────────────┼───────────────────────────┐
-                        │                         ▼                           │
-                        │  ┌──────────────┐  ┌──────────────┐                 │
-                        │  │  Test Model  │  │   Local      │                 │
-                        │  │  (Azure)     │  │   Inference  │                 │
-                        │  └──────────────┘  └──────┬───────┘                 │
-                        │                           │                         │
-                        │                           ▼                         │
-                        │         ┌─────────────────────────────┐             │
-                        │         │     DRIFT DETECTION         │             │
-                        │         │     (Evidently AI)          │             │
-                        │         │                             │             │
-                        │         │  • Feature Drift            │             │
-                        │         │  • Target Drift             │             │
-                        │         │  • Performance Shift        │             │
-                        │         └─────────────────────────────┘             │
-                        │                    LOCAL ENVIRONMENT                │
-                        └─────────────────────────────────────────────────────┘
-
----
+<div align="center">
+  <img src="visualizations/architecture.png">
+</div>
 
 ## 3. Model Evaluation Summary
 
@@ -233,6 +201,7 @@ The model's AUC dropped from **0.964 to 0.529**, a **45.12% degradation** that r
 │   ├── pr_curves.png               # Precision-Recall curves
 │   ├── confusion_matrices.png      # Side-by-side confusion matrices
 │   └── metrics_comparison.png      # Metrics bar chart
+│   └── architecture.png      # Overall pipeline architecture
 ├── notebooks/
 │   └── EDA.ipynb
 │   ├── test_drifted.ipynb      
