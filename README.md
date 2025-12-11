@@ -101,3 +101,20 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 The model effectively distinguishes high-risk from low-risk borrowers, produces trustworthy probability estimates and delivers actionable ranking for credit-risk decisions.
 
 ---
+
+## 4. Drift Detection & Model Monitoring
+
+Production models degrade over time as real-world data changes. We implemented comprehensive drift monitoring using **Evidently AI**.
+
+### Why Monitor for Drift?
+
+```
+Training Data (Reference)         Production Data (Drifted)
+─────────────────────────         ─────────────────────────────
+Model AUC:    0.954         →     Model AUC:    0.529            ← -44.5%
+F1 Score:     0.776         →     F1 Score:     0.172            ← -77.8%
+Precision:    0.769         →     Precision:    0.217            ← -71.8%
+Recall:       0.783         →     Recall:       0.143            ← -81.7%
+Avg Precision: 0.840        →     Avg Precision: 0.221           ← -73.7%
+```
+
