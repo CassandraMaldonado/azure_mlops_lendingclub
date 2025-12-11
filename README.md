@@ -56,7 +56,7 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
                         │                    LOCAL ENVIRONMENT                │
                         └─────────────────────────────────────────────────────┘
 ```
-## Components
+### Components
 
 | Layer | Resource | Purpose |
 |-------|----------|---------|
@@ -72,53 +72,15 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 ---
 
-## 3. Model evaluation summary
+## 3. Model Evaluation Summary
 
-After registering the best AutoML model, I evaluated it using Azure ML’s Test Model (Preview) tool. This allowed me to validate the model on a fully held-out dataset using standardized metrics and diagnostic plots.
+After registering the best AutoML model, evaluation was performed using Azure ML's **Test Model (Preview)** tool.
 
-1. **Overall performance**
+### Overall Performance
 
-Metrics:
-- **Accuracy:** 0.912
-
-- **AUC:** 0.957–0.975
-
-- **F1 (Binary)**: 0.944
-
-- **Log Loss:** 0.204
-
-The model achieves excellent separation between Charged Off vs. Fully Paid loans and produces reliable probability estimates, both essential in credit-risk modeling.
-
-2. **ROC curve**
-
-The ROC curves rise sharply toward the top-left corner with AUC consistently above 0.95. This meand the model maintains strong sensitivity and specificity across various thresholds and rarely confuses risky borrowers with low-risk ones.
-
-3. **Precision–Recall curve**
-
-Precision remains above 0.85 across most recall levels, so when the model identifies someone as high-risk, it is usually correct. This is especially important in imbalanced datasets, where defaults are rare.
-
-4. **Calibration curve**
-
-Predicted probabilities align closely with actual default frequencies. The model is not only accurate but also well-calibrated, which is crucial for decisions involving pricing, expected losses or credit limits.
-
-5. **Lift chart**
-
-The top 10% highest-risk borrowers show 2×–3× lift over random selection. Focusing on this top segment dramatically increases the number of true defaults captured, enabling more efficient manual reviews and proactive interventions.
-
-6. **Cumulative gains curve**
-
-Nearly all default cases are captured within the top 40% of borrowers ranked by risk. Operational teams can concentrate effort on a smaller portion of the portfolio while still identifying most high-risk customers—significantly reducing operational cost.
-
-✔ Overall Conclusion
-
-Across all evaluation tools, the model performs consistently well. It:
-
-Distinguishes high-risk from low-risk borrowers effectively
-
-Produces trustworthy probability estimates
-
-Delivers meaningful lift and actionable ranking
-
-Supports real-world credit-risk decisions
-
-These characteristics make the model suitable for deployment in lending workflows and further integration within an MLOps pipeline.
+| Metric | Score | Interpretation |
+|--------|-------|----------------|
+| **Accuracy** | 0.912 | 91.2% of predictions correct |
+| **AUC-ROC** | 0.957–0.975 | Excellent class separation |
+| **F1 Score** | 0.944 | Strong balance of precision/recall |
+| **Log Loss** | 0.204 | Well-calibrated probabilities |
