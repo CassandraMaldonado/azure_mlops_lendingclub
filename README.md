@@ -184,7 +184,7 @@ The model's AUC dropped from **0.964 to 0.529**, a **45.12% degradation** that r
 ## 6. Project Structure
 
 ```
-├── data/
+├── data/                           # Link to google drive with data provided due to file size issues
 │   ├── raw_data.csv
 │   ├── train.csv
 │   └── test.csv
