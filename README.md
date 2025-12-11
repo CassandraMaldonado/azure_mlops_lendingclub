@@ -67,7 +67,7 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 | **Evaluation** | Test Model (Preview) | Azure ML evaluation on test set. |
 | **Monitoring** | Evidently AI | Drift detection and model monitoring. |
 
-> **Note:** Real-time deployment to an online endpoint was attempted but blocked by quota limits in the student subscription. 
+**Note:** Real-time deployment to an online endpoint was attempted but blocked by quota limits in the student subscription. 
 ---
 
 ## 3. Model evaluation summary
