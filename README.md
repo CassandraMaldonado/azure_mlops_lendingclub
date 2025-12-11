@@ -232,11 +232,12 @@ The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that re
 
 ```
 ├── data/
-│   ├── train_data_cleaned.csv
-│   ├── test_data_cleaned.csv
-│   └── test_dataset_drifted_v2.csv
+│   ├── raw_data.csv
+│   ├── train.csv
+│   └── test.csv
+│   └── val.csv
+│   └── val_drifted.csv
 ├── src/
-│   ├── inference_local.py          # Local model scoring
 │   └── drift_detection.py          # Evidently drift analysis
 ├── reports/
 │   ├── data_drift_report.html
@@ -250,7 +251,9 @@ The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that re
 │   ├── confusion_matrices.png      # Side-by-side confusion matrices
 │   └── metrics_comparison.png      # Metrics bar chart
 ├── notebooks/
-│   └── drift_detection.ipynb       
+│   └── EDA.ipynb
+│   ├── test_drifted.ipynb      
+│   └── model_monitoring_with_drift.ipynb
 └── README.md
 ```
 
