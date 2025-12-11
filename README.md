@@ -8,7 +8,7 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 
 **Goal:** Predict whether a loan will default and operationalize the model using Azure Machine Learning with production-grade monitoring.
 
-### What I built
+### What we built
 
 | Component | Description |
 |-----------|-------------|
@@ -64,11 +64,10 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
 | **Training** | `loan_default_experiment` | AutoML experiment. |
 | | `loan_default_automl_run_1` | AutoML job. |
 | **Registry** | `loan_default_best_model` | Best model. |
-| **Evaluation** | Test Model (Preview) | Azure ML evaluation on test set |
-| **Monitoring** | Evidently AI | Drift detection and model monitoring |
+| **Evaluation** | Test Model (Preview) | Azure ML evaluation on test set. |
+| **Monitoring** | Evidently AI | Drift detection and model monitoring. |
 
-> **Note:** Real-time deployment to an online endpoint was attempted but blocked by quota limits in the student subscription. The repo focuses on **training, registration, testing, and drift monitoring**, covering the core MLOps lifecycle.
-
+> **Note:** Real-time deployment to an online endpoint was attempted but blocked by quota limits in the student subscription. 
 ---
 
 ## 3. Model evaluation summary
