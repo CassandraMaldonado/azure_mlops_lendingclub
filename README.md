@@ -160,3 +160,161 @@ performance_report = Report(metrics=[ClassificationPreset()])
 performance_report.run(reference_data=train_data, current_data=production_data)
 ```
 
+### Alert Thresholds
+
+| AUC Drift | Status | Recommended Action |
+|-----------|--------|-------------------|
+| < 2% | Normal | Continue monitoring. |
+| 2–5% | Warning | Investigate root cause. |
+| 5–15% | Critical | Prioritize model retraining. |
+| > 15% | Emergency* | Stop predictions, immediate retraining required.|
+
+> **Our Result:** 44.5% AUC drop -> Emergency level, this validates that our drift detection system correctly identifies catastrophic model failure.
+
+### Generated Reports
+
+| Report | Contents |
+|--------|----------|
+| `data_drift_report.html` | Per-feature drift analysis with statistical tests |
+| `prediction_drift_report.html` | Prediction distribution comparison |
+| `classification_quality_report.html` | Side-by-side performance metrics |
+| `model_drift_dashboard.html` | Interactive summary dashboard |
+
+### Visualizations
+
+| File | Description |
+|------|-------------|
+| `roc_comparison.png` | Side-by-side ROC curves showing AUC collapse |
+| `roc_curves.png` | Individual ROC curves for reference and production |
+| `pr_curves.png` | Precision-Recall curves (AP: 0.84 → 0.22) |
+| `confusion_matrices.png` | Confusion matrices showing prediction shifts |
+| `metrics_comparison.png` | Bar chart comparing all metrics |
+
+---
+
+## 5. Results: Drifted vs Regular Test Data
+
+We compared model performance on drifted data vs clean test data, revealing **catastrophic performance degradation**:
+
+### ROC Curve Comparison
+
+The production model (red) performs barely better than random guessing (dashed line), while the reference model (blue) shows excellent discrimination.
+
+### Precision-Recall Analysis
+
+| Dataset | Average Precision | Interpretation |
+|---------|-------------------|----------------|
+| Reference | 0.8403 | Strong performance across all thresholds. |
+| Production | 0.2208 | Collapses immediately — nearly unusable. |
+
+The PR curves tell a dramatic story: Reference maintains precision >0.75 up to 80% recall, while Production drops to ~0.20 precision almost immediately.
+
+### Confusion Matrix Breakdown
+
+| | Reference | Production | Change |
+|--|-----------|------------|--------|
+| **True Negatives** (Correct "Fully Paid") | 607,795 | 188,177 | -419,618 |
+| **False Positives** (Wrong "Default") | 38,027 | 27,509 | -10,518 |
+| **False Negatives** (Missed Defaults) | 34,991 | 45,748 | +10,757 |
+| **True Positives** (Correct "Default") | 126,373 | 7,628 | -118,745 |
+
+**Critical Issue:** The model went from catching **126,373 defaults** to only **7,628** — missing 94% of actual defaults on drifted data.
+
+### What the Dashboard Shows
+
+| Panel | Observation |
+|-------|-------------|
+| **ROC Curves** | Blue (reference) hugs top-left corner; Red (production) nearly follows the diagonal random line |
+| **Prediction Distribution** | Both datasets show predictions clustered near 0, but production data has different underlying patterns |
+| **Metrics Comparison** | All blue bars (reference) tower over red bars (production) — dramatic collapse across every metric |
+| **Confusion Matrix Diff** | Massive shifts: -419,618 in True Negatives, -118,745 in True Positives |
+
+### Key Finding
+
+> ⚠️ **Critical Alert:** The model's AUC dropped from **0.954 to 0.529** — a **44.5% degradation** that renders the model essentially useless on drifted production data. The model now misses **94% of actual loan defaults**. This demonstrates why drift monitoring is essential: without it, we'd be approving high-risk loans thinking they're safe.
+
+---
+
+## 6. Project Structure
+
+```
+├── data/
+│   ├── train_data_cleaned.csv
+│   ├── test_data_cleaned.csv
+│   └── test_dataset_drifted_v2.csv
+├── src/
+│   ├── inference_local.py          # Local model scoring
+│   └── drift_detection.py          # Evidently drift analysis
+├── reports/
+│   ├── data_drift_report.html
+│   ├── prediction_drift_report.html
+│   ├── classification_quality_report.html
+│   └── model_drift_dashboard.html
+├── visualizations/
+│   ├── roc_comparison.png          # ROC curves overlay
+│   ├── roc_curves.png              # Individual ROC curves
+│   ├── pr_curves.png               # Precision-Recall curves
+│   ├── confusion_matrices.png      # Side-by-side confusion matrices
+│   └── metrics_comparison.png      # Metrics bar chart
+├── notebooks/
+│   └── drift_detection.ipynb       # Full drift analysis notebook
+└── README.md
+```
+
+---
+
+## 7. Quick Start
+
+### Prerequisites
+```bash
+pip install evidently pandas scikit-learn xgboost matplotlib seaborn plotly
+```
+
+### Run Drift Detection
+```python
+import pandas as pd
+from evidently.report import Report
+from evidently.metric_preset import DataDriftPreset
+
+# Load data
+reference = pd.read_csv("data/train_data_cleaned.csv")
+production = pd.read_csv("data/test_dataset_drifted_v2.csv")
+
+# Run drift detection
+report = Report(metrics=[DataDriftPreset()])
+report.run(reference_data=reference, current_data=production)
+report.save_html("drift_report.html")
+```
+
+---
+
+## 8. Key Takeaways
+
+1. **Model Performance:** Azure AutoML achieved **0.954 AUC** and **0.840 Average Precision** on training data
+
+2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.954 → **0.529**, and the model now misses **94% of loan defaults**
+
+3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage
+
+4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe — the model catches only 7,628 of 53,376 actual defaults
+
+---
+
+## 9. Future Improvements
+
+- [ ] Deploy to Azure ML online endpoint (when quota available)
+- [ ] Add `DataQualityPreset()` for input data validation
+- [ ] Implement automated retraining triggers based on drift alerts
+- [ ] Set up scheduled drift monitoring jobs in Azure ML
+
+---
+
+## 10. References
+
+- [Evidently AI Documentation](https://docs.evidentlyai.com/)
+- [Azure ML AutoML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml)
+- [MLflow Model Registry](https://mlflow.org/docs/latest/model-registry.html)
+
+---
+
+*MLOps Project - Azure Machine Learning + Evidently AI Drift Detection*
