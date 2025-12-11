@@ -98,7 +98,6 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 | **Lift Chart** | Top 10% highest-risk borrowers show 2×–3× lift over random selection |
 | **Cumulative Gains** | Nearly all defaults captured within top 40% of risk-ranked borrowers |
 
-### Conclusion
 
 The model effectively distinguishes high-risk from low-risk borrowers, produces trustworthy probability estimates and delivers actionable ranking for credit-risk decisions.
 
@@ -113,14 +112,14 @@ Production models degrade over time as real-world data changes. We implemented c
 ```
 Training Data (Reference)         Production Data (Drifted)
 ─────────────────────────         ─────────────────────────────
-Model AUC:    0.954         ->     Model AUC:    0.529            <- -44.5%
-F1 Score:     0.776         ->     F1 Score:     0.172            <- -77.8%
-Precision:    0.769         ->     Precision:    0.217            <- -71.8%
-Recall:       0.783         ->     Recall:       0.143            <- -81.7%
-Avg Precision: 0.840        ->     Avg Precision:0.221            <- -73.7%
+Model AUC:    0.964         ->     Model AUC:    0.529            <- -44.5%
+F1 Score:     0.921         ->     F1 Score:     0.172            <- -77.8%
+Precision:    0.921         ->     Precision:    0.217            <- -71.8%
+Recall:       0.867         ->     Recall:       0.143            <- -81.7%
+Avg Precision: 0.969        ->     Avg Precision:0.221            <- -73.7%
 ```
 
-**Without drift monitoring, we'd be using a model that's essentially flipping a coin.**
+**Without drift monitoring, we'd be using a model that's essentially like flipping a coin.**
 
 ### Three Types of Drift Monitored
 
@@ -224,7 +223,7 @@ The PR curves tell a dramatic story: Reference maintains precision over 0.75 up 
 
 ### Key Finding
 
-The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that renders the model essentially useless on drifted production data. The model now misses **94% of actual loan defaults**. This demonstrates why drift monitoring is essential: without it, we'd be approving high-risk loans thinking they're safe.
+The model's AUC dropped from **0.964 to 0.529**, a **45.12% degradation** that renders the model essentially useless on drifted production data. The model now misses **94% of actual loan defaults**. This demonstrates why drift monitoring is essential: without it, we'd be approving high-risk loans thinking they're safe.
 
 ---
 
@@ -239,7 +238,7 @@ The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that re
 │   └── val_drifted.csv
 ├── src/
 │   └── drift_detection.py          # Evidently drift analysis
-├── reports/
+├── evidently reports/
 │   ├── data_drift_report.html
 │   ├── prediction_drift_report.html
 │   ├── classification_quality_report.html
@@ -262,9 +261,9 @@ The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that re
 
 ## 8. Key Takeaways
 
-1. **Model Performance:** Azure AutoML achieved **0.954 AUC** and **0.840 Average Precision** on training data.
+1. **Model Performance:** Azure AutoML achieved **0.964 AUC** and **0.969 Average Precision** on training data.
 
-2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.954 → **0.529**, and the model now misses **94% of loan defaults**.
+2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.964 → **0.529**, and the model now misses **94% of loan defaults**.
 
 3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage.
 
