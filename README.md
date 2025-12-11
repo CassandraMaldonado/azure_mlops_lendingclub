@@ -265,7 +265,7 @@ The model's AUC dropped from **0.964 to 0.529**, a **45.12% degradation** that r
 
 3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage.
 
-4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe, this would mean the model catches only 7,628 of 53,376 actual defaults.
+4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe which causes high financial impact. 
 
 ---
 
