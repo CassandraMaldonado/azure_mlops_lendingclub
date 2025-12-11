@@ -207,7 +207,7 @@ The production model (red) performs barely better than random guessing (dashed l
 | Reference | 0.8403 | Strong performance across all thresholds. |
 | Production | 0.2208 | Collapses immediately — nearly unusable. |
 
-The PR curves tell a dramatic story: Reference maintains precision >0.75 up to 80% recall, while Production drops to ~0.20 precision almost immediately.
+The PR curves tell a dramatic story: Reference maintains precision over 0.75 up to 80% recall, while Production drops to ~0.20 precision almost immediately.
 
 ### Confusion Matrix Breakdown
 
@@ -218,7 +218,7 @@ The PR curves tell a dramatic story: Reference maintains precision >0.75 up to 8
 | **False Negatives** (Missed Defaults) | 34,991 | 45,748 | +10,757 |
 | **True Positives** (Correct "Default") | 126,373 | 7,628 | -118,745 |
 
-**Critical Issue:** The model went from catching **126,373 defaults** to only **7,628** — missing 94% of actual defaults on drifted data.
+**Critical Issue:** The model went from catching **126,373 defaults** to only **7,628**, missing 94% of actual defaults on drifted data.
 
 ### Key Finding
 
@@ -248,7 +248,7 @@ The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that re
 │   ├── confusion_matrices.png      # Side-by-side confusion matrices
 │   └── metrics_comparison.png      # Metrics bar chart
 ├── notebooks/
-│   └── drift_detection.ipynb       # Full drift analysis notebook
+│   └── drift_detection.ipynb       
 └── README.md
 ```
 
@@ -263,7 +263,7 @@ The model's AUC dropped from **0.954 to 0.529**, a **44.5% degradation** that re
 
 3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage.
 
-4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe — the model catches only 7,628 of 53,376 actual defaults.
+4. **Business Implication:** Without monitoring, we'd approve high-risk loans as safe, this would mean the model catches only 7,628 of 53,376 actual defaults.
 
 ---
 
