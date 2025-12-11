@@ -236,8 +236,6 @@ The model's AUC dropped from **0.964 to 0.529**, a **45.12% degradation** that r
 │   └── test.csv
 │   └── val.csv
 │   └── val_drifted.csv
-├── src/
-│   └── drift_detection.py          # Evidently drift analysis
 ├── evidently reports/
 │   ├── data_drift_report.html
 │   ├── prediction_drift_report.html
