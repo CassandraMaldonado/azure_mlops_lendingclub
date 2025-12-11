@@ -118,3 +118,45 @@ Recall:       0.783         ->     Recall:       0.143            <- -81.7%
 Avg Precision: 0.840        ->     Avg Precision:0.221            <- -73.7%
 ```
 
+**Without drift monitoring, we'd be using a model that's essentially flipping a coin.**
+
+### Three Types of Drift Monitored
+
+| Drift Type | What It Detects | Why It Matters |
+|------------|-----------------|----------------|
+| **Covariate Shift** | Feature distributions changed. | Model may not generalize to new input patterns. |
+| **Prior Probability Shift** | Target distribution changed. | Model's baseline assumptions are off. |
+| **Performance Shift** | Model accuracy degraded. | Direct signal that retraining is needed. |
+
+### Features Monitored
+
+**Numerical Features (12 primary):**
+- `loan_amnt`, `funded_amnt`, `funded_amnt_inv`, `int_rate`
+- `installment`, `annual_inc`, `dti`, `open_acc`
+- `pub_rec`, `revol_bal`, `revol_util`, `total_acc`
+
+**Categorical Features (7):**
+- `term`, `grade`, `sub_grade`, `home_ownership`
+- `verification_status`, `purpose`, `application_type`
+
+**Extended Analysis:** 86 features analyzed for comprehensive drift detection.
+
+### Drift Detection Pipeline
+
+```python
+from evidently.report import Report
+from evidently.metric_preset import DataDriftPreset, TargetDriftPreset, ClassificationPreset
+
+# 1. Feature Drift Detection
+data_drift_report = Report(metrics=[DataDriftPreset()])
+data_drift_report.run(reference_data=train_data, current_data=production_data)
+
+# 2. Target Drift Detection  
+target_drift_report = Report(metrics=[TargetDriftPreset()])
+target_drift_report.run(reference_data=train_data, current_data=production_data)
+
+# 3. Performance Monitoring
+performance_report = Report(metrics=[ClassificationPreset()])
+performance_report.run(reference_data=train_data, current_data=production_data)
+```
+
