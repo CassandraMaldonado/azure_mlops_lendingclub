@@ -111,10 +111,10 @@ Production models degrade over time as real-world data changes. We implemented c
 ```
 Training Data (Reference)         Production Data (Drifted)
 ─────────────────────────         ─────────────────────────────
-Model AUC:    0.954         →     Model AUC:    0.529            ← -44.5%
-F1 Score:     0.776         →     F1 Score:     0.172            ← -77.8%
-Precision:    0.769         →     Precision:    0.217            ← -71.8%
-Recall:       0.783         →     Recall:       0.143            ← -81.7%
-Avg Precision: 0.840        →     Avg Precision: 0.221           ← -73.7%
+Model AUC:    0.954         ->     Model AUC:    0.529            <- -44.5%
+F1 Score:     0.776         ->     F1 Score:     0.172            <- -77.8%
+Precision:    0.769         ->     Precision:    0.217            <- -71.8%
+Recall:       0.783         ->     Recall:       0.143            <- -81.7%
+Avg Precision: 0.840        ->     Avg Precision:0.221            <- -73.7%
 ```
 
