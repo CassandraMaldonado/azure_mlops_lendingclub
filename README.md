@@ -56,19 +56,20 @@ An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club da
                         │                    LOCAL ENVIRONMENT                │
                         └─────────────────────────────────────────────────────┘
 ```
-### Components
+## Components
 
 | Layer | Resource | Purpose |
 |-------|----------|---------|
-| **Data** | `lending_club_final` | Training and validation data asset. |
-| | `lending_club_test` | Test data asset. |
-| **Training** | `loan_default_experiment` | AutoML experiment. |
-| | `loan_default_automl_run_1` | AutoML job. |
-| **Registry** | `loan_default_best_model` | Best model. |
-| **Evaluation** | Test Model (Preview) | Azure ML evaluation on test set. |
-| **Monitoring** | Evidently AI | Drift detection and model monitoring. |
+| **Data** | `lending_club_final` | Training/validation data asset |
+| | `lending_club_test` | Held-out test data asset |
+| **Training** | `loan_default_experiment` | AutoML experiment |
+| | `loan_default_automl_run_1` | AutoML job (Serverless CPU) |
+| **Registry** | `loan_default_best_model` | Best model (MLflow format) |
+| **Evaluation** | Test Model (Preview) | Azure ML evaluation on test set |
+| **Monitoring** | Evidently AI | Drift detection and model monitoring |
 
-> **Note:** Real-time deployment to an online endpoint was attempted but blocked by quota limits in the student subscription. 
+> **Note:** Real-time deployment to an online endpoint was attempted but blocked by quota limits in the student subscription. The repo focuses on **training, registration, testing, and drift monitoring**, covering the core MLOps lifecycle.
+
 ---
 
 ## 3. Model evaluation summary
