@@ -95,3 +95,9 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 | **Calibration** | Predicted probabilities align with actual default frequencies |
 | **Lift Chart** | Top 10% highest-risk borrowers show 2×–3× lift over random selection |
 | **Cumulative Gains** | Nearly all defaults captured within top 40% of risk-ranked borrowers |
+
+### Conclusion
+
+The model effectively distinguishes high-risk from low-risk borrowers, produces trustworthy probability estimates and delivers actionable ranking for credit-risk decisions.
+
+---
