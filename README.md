@@ -46,7 +46,7 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 
 | Analysis | Finding |
 |----------|---------|
-| **ROC Curve** | AUC > 0.95 consistently; strong sensitivity and specificity across thresholds |
+| **ROC Curve** | AUC > 0.95 consistently, there's a strong sensitivity and specificity across thresholds. |
 | **Precision-Recall** | Precision over 0.85 at most recall levels, this means a reliable high-risk identification. |
 | **Calibration** | Predicted probabilities align with actual default frequencies. |
 | **Lift Chart** | Top 10% highest-risk borrowers show a 2× to 3× lift over random selection. |
