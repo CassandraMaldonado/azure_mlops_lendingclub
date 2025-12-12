@@ -139,9 +139,9 @@ performance_report.run(reference_data=train_data, current_data=production_data)
 
 | File | Description |
 |------|-------------|
-| `roc_comparison.png` | Side-by-side ROC curves showing AUC collapse |
-| `roc_curves.png` | Individual ROC curves for reference and production |
-| `pr_curves.png` | Precision-Recall curves (AP: 0.84 → 0.22) |
+| `roc_comparison.png` | Side-by-side ROC curves showing AUC collapse. |
+| `roc_curves.png` | Individual ROC curves for reference and production. |
+| `pr_curves.png` | Precision-Recall curves (AP: 0.84 -> 0.22) |
 | `confusion_matrices.png` | Confusion matrices showing prediction shifts |
 | `metrics_comparison.png` | Bar chart comparing all metrics |
 
