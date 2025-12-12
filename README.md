@@ -37,9 +37,9 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 | Metric | Score | Interpretation |
 |--------|-------|----------------|
 | **Accuracy** | 0.912 | 91.2% of predictions correct. |
-| **AUC-ROC** | 0.957–0.975 | Excellent class separation |
-| **F1 Score** | 0.944 | Strong balance of precision/recall |
-| **Log Loss** | 0.204 | Well-calibrated probabilities |
+| **AUC-ROC** | 0.957–0.975 | Excellent class separation. |
+| **F1 Score** | 0.944 | Strong balance of precision/recall. |
+| **Log Loss** | 0.204 | Well-calibrated probabilities. |
 
 
 ### Evaluation Insights
