@@ -49,8 +49,8 @@ After registering the best AutoML model, evaluation was performed using Azure ML
 | **ROC Curve** | AUC > 0.95 consistently; strong sensitivity and specificity across thresholds |
 | **Precision-Recall** | Precision > 0.85 at most recall levels; reliable high-risk identification |
 | **Calibration** | Predicted probabilities align with actual default frequencies |
-| **Lift Chart** | Top 10% highest-risk borrowers show 2×–3× lift over random selection |
-| **Cumulative Gains** | Nearly all defaults captured within top 40% of risk-ranked borrowers |
+| **Lift Chart** | Top 10% highest-risk borrowers show a 2× to 3× lift over random selection. |
+| **Cumulative Gains** | Nearly all defaults captured within top 40% of risk-ranked borrowers. |
 
 
 The model effectively distinguishes high-risk from low-risk borrowers, produces trustworthy probability estimates and delivers actionable ranking for credit-risk decisions.
