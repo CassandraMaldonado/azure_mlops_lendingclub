@@ -30,7 +30,7 @@ By: Cassandra Maldonado, Aida Aida Sarinzhipova, Mahima Masetty, Aarav Dewangan.
 
 ## 3. Model Evaluation Summary
 
-After registering the best AutoML model, evaluation was performed using Azure ML's **Test Model (Preview)** tool.
+After registering the best AutoML model, evaluation was performed using Azure ML's Test Model tool.
 
 ### Overall Performance
 
