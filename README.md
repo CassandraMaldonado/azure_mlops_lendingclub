@@ -130,10 +130,10 @@ performance_report.run(reference_data=train_data, current_data=production_data)
 
 | Report | Contents |
 |--------|----------|
-| `data_drift_report.html` | Per-feature drift analysis with statistical tests |
+| `data_drift_report.html` | Per-feature drift analysis with statistical tests. |
 | `prediction_drift_report.html` | Prediction distribution comparison. |
 | `classification_quality_report.html` | Side-by-side performance metrics. |
-| `model_drift_dashboard.html` | Interactive summary dashboard, |
+| `model_drift_dashboard.html` | Interactive summary dashboard. |
 
 ### Visualizations
 
