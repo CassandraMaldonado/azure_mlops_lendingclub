@@ -168,7 +168,7 @@ The PR curves tell a dramatic story: Reference maintains precision over 0.75 up 
 
 | | Reference | Production | Change |
 |--|-----------|------------|--------|
-| **True Negatives** (Correct "Fully Paid") | 607,795 | 188,177 | -419,618 |
+| **True Negatives** (Correct "Fully paid") | 607,795 | 188,177 | -419,618 |
 | **False Positives** (Wrong "Default") | 38,027 | 27,509 | -10,518 |
 | **False Negatives** (Missed Defaults) | 34,991 | 45,748 | +10,757 |
 | **True Positives** (Correct "Default") | 126,373 | 7,628 | -118,745 |
