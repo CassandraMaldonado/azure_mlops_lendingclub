@@ -2,7 +2,7 @@
 
 An end-to-end MLOps workflow on Azure Machine Learning using the Lending Club dataset to predict loan defaults, with comprehensive drift detection and model monitoring.
 
-By: Cassandra Maldonado, Aida Aida Sarinzhipova, Mahima Masetty, Aarav Dewangan
+By: Cassandra Maldonado, Aida Aida Sarinzhipova, Mahima Masetty, Aarav Dewangan.
 
 ---
 
@@ -14,7 +14,7 @@ By: Cassandra Maldonado, Aida Aida Sarinzhipova, Mahima Masetty, Aarav Dewangan
 
 | Component | Description |
 |-----------|-------------|
-| **Model Training** | Azure AutoML to train and select the best model |
+| **Model Training** | Azure AutoML to train and select the best model. |
 | **Model Registry** | MLflow model registered in Azure ML. |
 | **Model Evaluation** | Test job on held-out data with comprehensive metrics. |
 | **Drift Detection** | Evidently AI monitoring for feature, target and performance drift. |
