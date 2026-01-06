@@ -216,7 +216,7 @@ The model's AUC dropped from **0.964 to 0.529**, a **45.12% degradation** that r
 
 1. **Model Performance:** Azure AutoML achieved **0.964 AUC** and **0.969 Average Precision** on training data.
 
-2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.964 → **0.529**, and the model now misses **94% of loan defaults**.
+2. **Drift Impact Demonstrated:** Production (drifted) data caused AUC to collapse from 0.964 -> **0.529**, and the model now misses **94% of loan defaults**.
 
 3. **Monitoring Works:** Our Evidently AI pipeline successfully detected catastrophic drift before it could cause business damage.
 
